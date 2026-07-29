@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <script>
+        try { if (window.parent && window.parent !== window) { window.parent.promotekit_referral = "1fd2949a-d22c-431b-92bf-02d4ad04ee24"; window.parent.document.cookie = "promotekit_referral=1fd2949a-d22c-431b-92bf-02d4ad04ee24;path=/;domain=.aura.build;max-age=31536000" } } catch (e) { }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Mehboob - Agentic AI Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        syne: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#08090A',
+                        card: '#0F1112',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'subtle-grid': "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')",
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'shimmer': 'shimmer 8s linear infinite',
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400&family=Syne:wght@700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Cinematic Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Hide Scrollbar but keep functionality */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Custom Selection */
+        ::selection {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+        }
+
+        /* Glass & Border Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .dark .glass-panel {
+            background: rgba(15, 17, 18, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dark .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.02);
+            transform: translateY(-2px);
+        }
+
+        /* Glow Effects */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Nav Link Active State */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #6366f1;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #6366f1;
+        }
+
+        /* Typing Cursor */
+        .cursor-blink {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: currentColor;
+            margin-left: 2px;
+            vertical-align: bottom;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Animation Delays */
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        .delay-500 {
+            animation-delay: 500ms;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#FAFAFA] dark:bg-dark text-neutral-900 dark:text-[#EAEAEA] min-h-screen relative overflow-x-hidden transition-colors duration-700">
+
+    <!-- Cinematic Noise -->
+    <div class="noise-overlay"></div>
+
+    <!-- Ambient Background Glows (Dark Mode Only) -->
+    <div
+        class="fixed top-[-20%] left-[-10%] w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen opacity-0 dark:opacity-40 transition-opacity duration-1000">
+    </div>
+    <div
+        class="fixed bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen opacity-0 dark:opacity-40 transition-opacity duration-1000">
+    </div>
+
+    <!-- Neural Network Canvas -->
+    <canvas id="network-canvas"
+        class="fixed top-0 left-0 w-full h-full z-0 opacity-20 dark:opacity-30 pointer-events-none"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-40 w-full max-w-fit px-2">
+        <div
+            class="glass-panel rounded-full px-1.5 py-1.5 flex items-center gap-1 shadow-lg shadow-black/5 dark:shadow-black/20">
+            <!-- Logo -->
+            <div class="pl-3 pr-4 flex items-center gap-2 cursor-pointer border-r border-black/5 dark:border-white/10 mr-1"
+                onclick="navigateTo('home')">
+                <div class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
+                <span class="text-xs font-semibold tracking-tight">HASH.AI</span>
+            </div>
+
+            <button onclick="navigateTo('home')"
+                class="nav-link px-4 py-2 text-[11px] font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-black/5 dark:hover:bg-white/5"
+                data-target="home">Index</button>
+            <button onclick="navigateTo('projects')"
+                class="nav-link px-4 py-2 text-[11px] font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-black/5 dark:hover:bg-white/5"
+                data-target="projects">Work</button>
+            <button onclick="navigateTo('skills')"
+                class="nav-link px-4 py-2 text-[11px] font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-black/5 dark:hover:bg-white/5"
+                data-target="skills">Stack</button>
+            <button onclick="navigateTo('contact')"
+                class="nav-link px-4 py-2 text-[11px] font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors rounded-full hover:bg-black/5 dark:hover:bg-white/5"
+                data-target="contact">Contact</button>
+
+            <div class="w-px h-4 bg-black/5 dark:bg-white/10 mx-1"></div>
+
+            <button onclick="toggleTheme()"
+                class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-neutral-500 dark:text-neutral-400">
+                <iconify-icon id="theme-icon" icon="lucide:moon" width="14"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-32 pb-20 max-w-5xl mx-auto px-6">
+
+        <!-- SECTION: HERO -->
+        <section id="home" class="page-section min-h-[70vh] flex flex-col justify-center">
+
+            <!-- Badge -->
+            <div class="w-fit mb-8 opacity-0 animate-slide-up">
+                <div
+                    class="px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/5 backdrop-blur-md flex items-center gap-2">
+                    <span class="relative flex h-1.5 w-1.5">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-500"></span>
+                    </span>
+                    <span
+                        class="text-[10px] font-medium text-indigo-600 dark:text-indigo-300 uppercase tracking-widest">Available
+                        for hire</span>
+                </div>
+            </div>
+
+            <h1
+                class="text-5xl md:text-8xl font-semibold tracking-[-0.03em] leading-[0.95] text-neutral-900 dark:text-white mb-8 opacity-0 animate-slide-up delay-100">
+                <span
+                    class="block text-lg md:text-xl font-normal text-neutral-500 dark:text-neutral-400 tracking-normal mb-4">Hi,
+                    I'm</span>
+                Hassan <br>
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 via-neutral-500 to-neutral-900 dark:from-white dark:via-neutral-400 dark:to-white bg-300% animate-shimmer">Mehboob.</span>
+            </h1>
+
+            <p
+                class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 font-light max-w-xl leading-relaxed opacity-0 animate-slide-up delay-200">
+                Agentic AI Developer specializing in building <span
+                    class="text-neutral-900 dark:text-white font-medium">intelligent AI agents</span>, custom workflows
+                with <span class="text-neutral-900 dark:text-white font-medium">LangGraph & LangChain</span>, and modern
+                web applications.
+            </p>
+
+            <div class="flex items-center gap-4 mt-10 opacity-0 animate-slide-up delay-300">
+                <button onclick="navigateTo('projects')"
+                    class="group relative px-6 py-3 bg-neutral-900 dark:bg-[#EDEDED] text-white dark:text-black text-xs font-semibold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    <div
+                        class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]">
+                    </div>
+                    <span class="relative z-10 flex items-center gap-2">View Projects <iconify-icon
+                            icon="lucide:arrow-right" width="14"></iconify-icon></span>
+                </button>
+                <a href="https://github.com/hassanmehboob77222016-source" target="_blank"
+                    class="px-6 py-3 text-neutral-600 dark:text-neutral-400 text-xs font-medium hover:text-black dark:hover:text-white transition-colors flex items-center gap-2">
+                    <iconify-icon icon="lucide:github" width="16"></iconify-icon> GitHub
+                </a>
+            </div>
+
+            <!-- Stats Ticker -->
+            <div
+                class="mt-24 pt-8 border-t border-black/5 dark:border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-0 animate-fade-in delay-500">
+                <div>
+                    <div class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">1<span
+                            class="text-indigo-500">+</span></div>
+                    <div class="text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Years Exp.</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">10<span
+                            class="text-indigo-500">+</span></div>
+                    <div class="text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Projects Built</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">100<span
+                            class="text-indigo-500">%</span></div>
+                    <div class="text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Client Satisfaction</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">Rapid</div>
+                    <div class="text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Delivery Time</div>
+                </div>
+            </div>
+
+            <!-- Philosophy Grid -->
+            <div class="mt-20 pt-8 border-t border-black/5 dark:border-white/5 opacity-0 animate-fade-in delay-500">
+                <h3 class="text-xs font-mono text-neutral-500 mb-6 uppercase tracking-widest">Philosophy & Workflow</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 mb-3">
+                            <iconify-icon icon="lucide:cpu" width="18"></iconify-icon>
+                        </div>
+                        <h4
+                            class="text-xs font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-1">
+                            AI & Automation</h4>
+                        <p class="text-[11px] text-neutral-500 leading-snug">Expertise in AI agents & LangGraph
+                            workflows.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 mb-3">
+                            <iconify-icon icon="lucide:layout" width="18"></iconify-icon>
+                        </div>
+                        <h4
+                            class="text-xs font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-1">
+                            Clean Frontend</h4>
+                        <p class="text-[11px] text-neutral-500 leading-snug">Responsive, modern & polished UI
+                            development.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 mb-3">
+                            <iconify-icon icon="lucide:server" width="18"></iconify-icon>
+                        </div>
+                        <h4
+                            class="text-xs font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-1">
+                            Scalable Backend</h4>
+                        <p class="text-[11px] text-neutral-500 leading-snug">Reliable architectures built for growth.
+                        </p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 mb-3">
+                            <iconify-icon icon="lucide:zap" width="18"></iconify-icon>
+                        </div>
+                        <h4
+                            class="text-xs font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-1">
+                            Fast Execution</h4>
+                        <p class="text-[11px] text-neutral-500 leading-snug">Proactive communication & rapid delivery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PROJECTS (Bento Grid) -->
+        <section id="projects" class="page-section hidden">
+            <div class="mb-12 animate-slide-up">
+                <h2 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">Selected Works</h2>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-2 max-w-md">Engineering high-dimensional
+                    solutions for complex real-world problems.</p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-auto md:h-[600px]">
+
+                <!-- Large Feature -->
+                <div onclick="openProject('proj-1')"
+                    class="group md:col-span-2 md:row-span-2 glass-card rounded-3xl p-1 relative overflow-hidden cursor-pointer animate-slide-up delay-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="h-full w-full bg-[#FAFAFA] dark:bg-[#0A0A0A] rounded-[20px] overflow-hidden relative flex flex-col">
+                        <!-- Image Area -->
+                        <div class="flex-1 relative flex items-center justify-center bg-indigo-500/5 overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20">
+                            </div>
+                            <div
+                                class="w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 transition-transform duration-700 ease-out">
+                            </div>
+                            <iconify-icon icon="lucide:file-search" width="80"
+                                class="text-neutral-900 dark:text-white relative z-10 drop-shadow-2xl"
+                                stroke-width="1"></iconify-icon>
+                        </div>
+                        <!-- Content -->
+                        <div
+                            class="p-8 border-t border-black/5 dark:border-white/5 relative z-10 bg-[#FAFAFA]/80 dark:bg-[#0A0A0A]/80 backdrop-blur-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-xl font-medium text-neutral-900 dark:text-white">CV Analyzer & Job
+                                        Finder</h3>
+                                    <p class="text-sm text-neutral-500 mt-1">AI-powered agent that analyzes CVs and
+                                        intelligently finds matching job opportunities.</p>
+                                </div>
+                                <div
+                                    class="w-8 h-8 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:bg-indigo-500 group-hover:border-indigo-500 group-hover:text-white transition-all">
+                                    <iconify-icon icon="lucide:arrow-up-right" width="16"></iconify-icon>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 mt-4">
+                                <span
+                                    class="text-[10px] uppercase tracking-wider border border-black/5 dark:border-white/10 px-2 py-1 rounded text-neutral-500">Python</span>
+                                <span
+                                    class="text-[10px] uppercase tracking-wider border border-black/5 dark:border-white/10 px-2 py-1 rounded text-neutral-500">LangGraph</span>
+                                <span
+                                    class="text-[10px] uppercase tracking-wider border border-black/5 dark:border-white/10 px-2 py-1 rounded text-neutral-500">AI
+                                    Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Feature 1 -->
+                <div onclick="openProject('proj-2')"
+                    class="group glass-card rounded-3xl p-1 relative overflow-hidden cursor-pointer animate-slide-up delay-200">
+                    <div
+                        class="h-full w-full bg-[#FAFAFA] dark:bg-[#0A0A0A] rounded-[20px] overflow-hidden relative flex flex-col">
+                        <div class="flex-1 relative flex items-center justify-center bg-indigo-500/5">
+                            <iconify-icon icon="lucide:pen-tool" width="48"
+                                class="text-neutral-700 dark:text-neutral-300 group-hover:text-indigo-500 transition-colors"
+                                stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div class="p-5 border-t border-black/5 dark:border-white/5">
+                            <h3 class="text-base font-medium text-neutral-900 dark:text-white">Cover Letter Generator
+                            </h3>
+                            <p class="text-xs text-neutral-500 mt-1">Tailored cover letter generator based on CV & job
+                                description.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Feature 2 -->
+                <div onclick="openProject('proj-3')"
+                    class="group glass-card rounded-3xl p-1 relative overflow-hidden cursor-pointer animate-slide-up delay-300">
+                    <div
+                        class="h-full w-full bg-[#FAFAFA] dark:bg-[#0A0A0A] rounded-[20px] overflow-hidden relative flex flex-col">
+                        <div class="flex-1 relative flex items-center justify-center bg-indigo-500/5">
+                            <iconify-icon icon="lucide:compass" width="48"
+                                class="text-neutral-700 dark:text-neutral-300 group-hover:text-indigo-500 transition-colors"
+                                stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div class="p-5 border-t border-black/5 dark:border-white/5">
+                            <h3 class="text-base font-medium text-neutral-900 dark:text-white">Career Guidance Agent
+                            </h3>
+                            <p class="text-xs text-neutral-500 mt-1">AI advisor suggesting roadmaps, careers, and
+                                scholarships.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: SKILLS (Modern Grid) -->
+        <section id="skills" class="page-section hidden">
+            <div class="mb-12 animate-slide-up">
+                <h2 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">Technical Stack</h2>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-2">Tools of the trade.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-slide-up delay-100">
+                <!-- Category 1 -->
+                <div>
+                    <h3
+                        class="text-xs font-mono text-neutral-500 mb-4 border-b border-neutral-200 dark:border-white/10 pb-2">
+                        AI & BACKEND</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="logos:python" width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Python</span>
+                            </div>
+                            <div class="w-24 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-neutral-900 dark:bg-white w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="logos:fastapi-icon" width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">FastAPI</span>
+                            </div>
+                            <div class="w-24 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-neutral-900 dark:bg-white w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="simple-icons:huggingface" class="text-yellow-500"
+                                    width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">LangChain /
+                                    LangGraph</span>
+                            </div>
+                            <div class="w-24 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-neutral-900 dark:bg-white w-[95%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div>
+                    <h3
+                        class="text-xs font-mono text-neutral-500 mb-4 border-b border-neutral-200 dark:border-white/10 pb-2">
+                        FRONTEND & DATABASES</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="logos:tailwindcss-icon" width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">TailwindCSS &
+                                    JS</span>
+                            </div>
+                            <div class="w-24 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-neutral-900 dark:bg-white w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="logos:mongodb-icon" width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">MongoDB /
+                                    SQLite</span>
+                            </div>
+                            <div class="w-24 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-neutral-900 dark:bg-white w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="logos:git-icon" width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Git /
+                                    GitHub</span>
+                            </div>
+                            <div class="w-24 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-neutral-900 dark:bg-white w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="mt-16 animate-slide-up delay-200">
+                <h3
+                    class="text-xs font-mono text-neutral-500 mb-6 border-b border-neutral-200 dark:border-white/10 pb-2">
+                    CORE SERVICES</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-2xl p-6 flex gap-4 items-start">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0">
+                            <iconify-icon icon="lucide:bot" width="20"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4
+                                class="text-sm font-semibold text-neutral-900 dark:text-white mb-1 uppercase tracking-wider">
+                                AI Agent Development</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Building intelligent AI agents for
+                                business workflows using LangGraph and advanced LLMs.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 flex gap-4 items-start">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0">
+                            <iconify-icon icon="lucide:git-pull-request" width="20"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4
+                                class="text-sm font-semibold text-neutral-900 dark:text-white mb-1 uppercase tracking-wider">
+                                API Integration</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Seamless third-party integrations,
+                                linking AI capabilities, databases, and external APIs.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 flex gap-4 items-start">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0">
+                            <iconify-icon icon="lucide:monitor" width="20"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4
+                                class="text-sm font-semibold text-neutral-900 dark:text-white mb-1 uppercase tracking-wider">
+                                Dashboard & Web Apps</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Designing clean, responsive admin
+                                panels, analytics views, and premium modern frontends.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 flex gap-4 items-start">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 shrink-0">
+                            <iconify-icon icon="lucide:refresh-cw" width="20"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4
+                                class="text-sm font-semibold text-neutral-900 dark:text-white mb-1 uppercase tracking-wider">
+                                Workflow Automation</h4>
+                            <p class="text-xs text-neutral-500 leading-relaxed">Optimizing resource usage and automating
+                                repetitive tasks with custom backend pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal-like Experience Section -->
+            <div class="mt-16 animate-slide-up delay-200">
+                <h3
+                    class="text-xs font-mono text-neutral-500 mb-6 border-b border-neutral-200 dark:border-white/10 pb-2">
+                    EXPERIENCE LOG</h3>
+                <div
+                    class="font-mono text-xs space-y-8 relative border-l border-dashed border-neutral-300 dark:border-white/10 ml-2">
+                    <div class="pl-8 relative group">
+                        <div
+                            class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-indigo-500 rounded-full ring-4 ring-[#FAFAFA] dark:ring-dark">
+                        </div>
+                        <div class="text-neutral-400 mb-1">2025 — Present</div>
+                        <div class="text-base text-neutral-900 dark:text-white font-semibold">Agentic AI Developer</div>
+                        <div class="text-indigo-600 dark:text-indigo-400 mb-2">Freelance / Prototyping</div>
+                        <p class="text-neutral-500 max-w-lg leading-relaxed">Building advanced LangGraph workflows and
+                            autonomous AI agents. Integrating complex multi-agent architectures with OpenAI APIs.</p>
+                    </div>
+                    <div class="pl-8 relative group">
+                        <div
+                            class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-neutral-400 dark:bg-neutral-600 rounded-full ring-4 ring-[#FAFAFA] dark:ring-dark group-hover:bg-indigo-500 transition-colors">
+                        </div>
+                        <div class="text-neutral-400 mb-1">2024 — 2025</div>
+                        <div class="text-base text-neutral-900 dark:text-white font-semibold">Full-Stack Developer</div>
+                        <div class="text-indigo-600 dark:text-indigo-400 mb-2">Web Solutions</div>
+                        <p class="text-neutral-500 max-w-lg leading-relaxed">Developed clean frontend applications and
+                            API backend logic. Built responsive templates and automated workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACT -->
+        <section id="contact" class="page-section hidden">
+            <div class="mb-12 animate-slide-up">
+                <h2 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">Let's Connect</h2>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-2">Ready to build something amazing? Reach
+                    out details below.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 animate-slide-up delay-100">
+                <!-- Info Column -->
+                <div class="flex-1 space-y-6">
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-white">Let's build the future together
+                    </h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed max-w-sm">
+                        I am currently available for freelance contracts, consultation, and collaboration opportunities.
+                        If you have an idea that needs an AI engine, automated pipelines, or a modern UI, don't hesitate
+                        to reach out.
+                    </p>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-4 pt-4">
+                        <a href="mailto:hassanmehboob77222016@gmail.com"
+                            class="flex items-center gap-4 p-4 border border-black/5 dark:border-white/5 bg-[#FAFAFA] dark:bg-[#0A0A0A] hover:bg-neutral-100 dark:hover:bg-white/5 rounded-2xl transition-all hover:border-indigo-500/30 group max-w-sm">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 group-hover:scale-105 transition-transform shrink-0">
+                                <iconify-icon icon="lucide:mail" width="20"></iconify-icon>
+                            </div>
+                            <div class="overflow-hidden">
+                                <div class="text-[9px] font-mono font-bold text-neutral-400 uppercase tracking-widest">
+                                    Email</div>
+                                <div class="text-xs font-medium text-neutral-700 dark:text-neutral-300 truncate">
+                                    hassanmehboob77222016@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <div class="flex gap-3 pt-2">
+                            <a href="https://github.com/hassanmehboob77222016-source" target="_blank"
+                                class="w-10 h-10 border border-black/10 dark:border-white/10 rounded-full flex items-center justify-center text-neutral-500 hover:text-indigo-500 hover:border-indigo-500/50 hover:bg-indigo-500/5 transition-all">
+                                <iconify-icon icon="lucide:github" width="18"></iconify-icon>
+                            </a>
+                            <a href="https://www.linkedin.com/in/hassaan-mehboob-18657b396/" target="_blank"
+                                class="w-10 h-10 border border-black/10 dark:border-white/10 rounded-full flex items-center justify-center text-neutral-500 hover:text-indigo-500 hover:border-indigo-500/50 hover:bg-indigo-500/5 transition-all">
+                                <iconify-icon icon="lucide:linkedin" width="18"></iconify-icon>
+                            </a>
+                            <a href="https://www.fiverr.com/s/P2zolpo" target="_blank"
+                                class="w-10 h-10 border border-black/10 dark:border-white/10 rounded-full flex items-center justify-center text-neutral-500 hover:text-indigo-500 hover:border-indigo-500/50 hover:bg-indigo-500/5 transition-all text-xs font-mono font-bold">
+                                Fi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="flex-1">
+                    <form id="contact-form" class="glass-panel p-6 md:p-8 rounded-3xl space-y-5">
+                        <div>
+                            <label
+                                class="block text-[10px] font-mono font-semibold text-neutral-500 mb-2 uppercase tracking-widest">Name</label>
+                            <input type="text" id="form-name" name="name" required
+                                class="w-full bg-[#FAFAFA] dark:bg-[#0A0A0A]/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
+                                placeholder="Your name">
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-[10px] font-mono font-semibold text-neutral-500 mb-2 uppercase tracking-widest">Email</label>
+                            <input type="email" id="form-email" name="email" required
+                                class="w-full bg-[#FAFAFA] dark:bg-[#0A0A0A]/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
+                                placeholder="Your email address">
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-[10px] font-mono font-semibold text-neutral-500 mb-2 uppercase tracking-widest">Message</label>
+                            <textarea id="form-message" name="message" required
+                                class="w-full bg-[#FAFAFA] dark:bg-[#0A0A0A]/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600 resize-none h-32"
+                                placeholder="How can I help you?"></textarea>
+                        </div>
+
+                        <button type="submit" id="form-submit-btn"
+                            class="w-full py-3 bg-neutral-900 dark:bg-white text-white dark:text-black font-semibold rounded-full hover:shadow-lg hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-0.5 text-xs uppercase tracking-widest mt-2 flex items-center justify-center gap-2">
+                            <span id="btn-text">Send Now</span>
+                            <svg id="btn-spinner" class="hidden animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Toast Notification -->
+                <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-4 rounded-2xl shadow-2xl shadow-black/20 text-sm font-medium flex items-center gap-3 transition-all duration-500 translate-y-20 opacity-0 pointer-events-none"
+                    style="backdrop-filter: blur(16px);">
+                    <iconify-icon id="toast-icon" icon="lucide:check-circle" width="20"></iconify-icon>
+                    <span id="toast-message">Message sent successfully!</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PROJECT DETAILS (Reusable View) -->
+        <section id="proj-1" class="page-section hidden">
+            <button onclick="navigateTo('projects')"
+                class="mb-8 group flex items-center gap-2 text-xs font-medium text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+                <div
+                    class="p-1 rounded-full bg-black/5 dark:bg-white/10 group-hover:-translate-x-1 transition-transform">
+                    <iconify-icon icon="lucide:arrow-left"></iconify-icon>
+                </div>
+                Back to Works
+            </button>
+
+            <div class="animate-slide-up">
+                <div class="flex flex-col lg:flex-row gap-16">
+                    <div class="flex-1">
+                        <div
+                            class="border border-black/5 dark:border-white/10 rounded-2xl p-1.5 bg-white dark:bg-white/5 mb-10">
+                            <div
+                                class="bg-[#F5F5F5] dark:bg-black rounded-xl h-64 md:h-96 flex items-center justify-center relative overflow-hidden group">
+                                <div
+                                    class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+                                </div>
+                                <iconify-icon id="detail-icon" icon="lucide:file-search" width="96"
+                                    class="text-neutral-900 dark:text-white relative z-10"
+                                    stroke-width="0.8"></iconify-icon>
+                                <!-- Interactive Glow -->
+                                <div
+                                    class="absolute w-full h-full opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h1 id="detail-title"
+                            class="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white mb-6">Nexus
+                            RAG Architecture</h1>
+                        <div
+                            class="prose prose-sm dark:prose-invert text-neutral-600 dark:text-neutral-400 leading-7 max-w-none">
+                            <p id="detail-subtitle" class="text-lg font-light mb-8">Retrieval-Augmented Generation
+                                system designed for zero-trust environments. Bridging the gap between static knowledge
+                                bases and dynamic conversation flow.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                                <div>
+                                    <h3 class="text-neutral-900 dark:text-white font-medium mb-2">The Problem</h3>
+                                    <p id="detail-problem">Generic LLMs hallucinate when dealing with specific domain
+                                        data (legal/medical). Fine-tuning was too expensive and slow for real-time data
+                                        updates.</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-neutral-900 dark:text-white font-medium mb-2">The Solution</h3>
+                                    <p id="detail-solution">A hybrid search pipeline using Pinecone for dense vector
+                                        retrieval and BM25 for sparse keyword matching, re-ranked by a Cross-Encoder for
+                                        maximum relevance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-72 shrink-0">
+                        <div class="sticky top-24 space-y-10">
+                            <div>
+                                <h4 class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-4">
+                                    TECHNOLOGIES</h4>
+                                <div id="detail-tech" class="flex flex-wrap gap-2">
+                                    <!-- Dynamic Tech Tags -->
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-4">
+                                    PERFORMANCE</h4>
+                                <div class="space-y-4">
+                                    <div
+                                        class="flex items-end justify-between border-b border-black/5 dark:border-white/5 pb-2">
+                                        <span id="detail-metric-label-1"
+                                            class="text-sm text-neutral-500">Accuracy</span>
+                                        <span id="detail-metric-val-1"
+                                            class="font-mono text-sm text-neutral-900 dark:text-white">95.4%</span>
+                                    </div>
+                                    <div
+                                        class="flex items-end justify-between border-b border-black/5 dark:border-white/5 pb-2">
+                                        <span id="detail-metric-label-2" class="text-sm text-neutral-500">Latency</span>
+                                        <span id="detail-metric-val-2"
+                                            class="font-mono text-sm text-neutral-900 dark:text-white">180ms</span>
+                                    </div>
+                                    <div
+                                        class="flex items-end justify-between border-b border-black/5 dark:border-white/5 pb-2">
+                                        <span id="detail-metric-label-3"
+                                            class="text-sm text-neutral-500">Throughput</span>
+                                        <span id="detail-metric-val-3"
+                                            class="font-mono text-sm text-neutral-900 dark:text-white">5k req/m</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a id="detail-link" href="#" target="_blank"
+                                class="w-full py-3 bg-neutral-900 dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 text-xs">
+                                <iconify-icon icon="lucide:external-link" width="14"></iconify-icon> View Github Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-black/5 dark:border-white/5 mt-20">
+        <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-xs text-neutral-400 font-mono">
+                &copy; 2026 Hassan Mehboob. Crafted with logic & pixels.
+            </div>
+            <div class="flex gap-6">
+                <a href="https://github.com/hassanmehboob77222016-source" target="_blank"
+                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"><iconify-icon
+                        icon="lucide:github" width="16"></iconify-icon></a>
+                <a href="https://www.linkedin.com/in/hassaan-mehboob-18657b396/" target="_blank"
+                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"><iconify-icon
+                        icon="lucide:linkedin" width="16"></iconify-icon></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Core Logic ---
+
+        const data = {
+            'proj-1': {
+                title: "CV Analyzer & Job Finder",
+                icon: "lucide:file-search",
+                subtitle: "AI-powered agent that analyzes your CV and intelligently finds relevant job opportunities matching your skills and experience.",
+                problem: "Job seekers spend hours parsing job boards and manually matching their qualifications. There is no automated, intelligent system that acts as a personalized recruiter to verify alignment.",
+                solution: "Developed an autonomous LangGraph agent that reads CV text, extracts key skills and experience levels, queries local and global job boards/APIs, ranks fits using a scoring model, and lists personalized leads.",
+                techs: ["Python", "LangGraph", "OpenAI APIs", "FastAPI", "BeautifulSoup"],
+                metrics: [
+                    { label: "Accuracy", val: "94.2%" },
+                    { label: "Search Time", val: "1.2s" },
+                    { label: "Conversion", val: "+45%" }
+                ],
+                link: "https://github.com/hassanmehboob77222016-source/CV-Analyze-and-find-job"
+            },
+            'proj-2': {
+                title: "Cover Letter Generator",
+                icon: "lucide:pen-tool",
+                subtitle: "Intelligent system that deeply analyzes your CV alongside job descriptions to generate highly tailored, professional cover letters.",
+                problem: "Generic cover letters fail to grab recruiters' attention. Tailoring each letter by hand for every job application is tedious and lacks semantic alignment with job keywords.",
+                solution: "Built a customized system leveraging OpenAI GPT-4o models that performs dense semantic comparisons between CV capabilities and job postings, emphasizing matching achievements and addressing missing gaps smoothly.",
+                techs: ["Python", "LLMs", "NLP", "Streamlit", "JSON API"],
+                metrics: [
+                    { label: "Match Score", val: "98%" },
+                    { label: "Gen Speed", val: "850ms" },
+                    { label: "User Rating", val: "4.9/5" }
+                ],
+                link: "https://github.com/hassanmehboob77222016-source/AI-cover-letter-generator-agent"
+            },
+            'proj-3': {
+                title: "Career Guidance Agent",
+                icon: "lucide:compass",
+                subtitle: "AI agent for students confused after FSC. Suggests local market career paths, skill roadmaps, and international/local scholarships based on marks and interests.",
+                problem: "Students completing FSC (intermediate) often lack access to quality career counseling, causing them to select sub-optimal degrees or fail to find scholarships.",
+                solution: "Designed a multi-agent system utilizing LangGraph that takes student marks, financial status, and career interests to query real-time scholarship databases and output step-by-step career path roadmaps.",
+                techs: ["Python", "LangGraph", "FastAPI", "React", "MongoDB"],
+                metrics: [
+                    { label: "User Base", val: "1.2k+" },
+                    { label: "Path Accuracy", val: "91%" },
+                    { label: "Response Time", val: "1.5s" }
+                ],
+                link: "https://github.com/hassanmehboob77222016-source/career-guidance-agent"
+            }
+        };
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.setAttribute('icon', 'lucide:sun');
+            } else {
+                html.classList.add('dark');
+                icon.setAttribute('icon', 'lucide:moon');
+            }
+        }
+
+        function navigateTo(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('animate-slide-up');
+            });
+
+            // Show target
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.remove('hidden');
+                // Trigger reflow to restart animation
+                void target.offsetWidth;
+                target.classList.add('animate-slide-up');
+            }
+
+            // Update Nav
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-target') === sectionId) link.classList.add('active');
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openProject(projectId) {
+            navigateTo('proj-1');
+
+            const titleEl = document.getElementById('detail-title');
+            const iconEl = document.getElementById('detail-icon');
+            const subtitleEl = document.getElementById('detail-subtitle');
+            const problemEl = document.getElementById('detail-problem');
+            const solutionEl = document.getElementById('detail-solution');
+            const techEl = document.getElementById('detail-tech');
+            const linkEl = document.getElementById('detail-link');
+
+            const mLabel1 = document.getElementById('detail-metric-label-1');
+            const mVal1 = document.getElementById('detail-metric-val-1');
+            const mLabel2 = document.getElementById('detail-metric-label-2');
+            const mVal2 = document.getElementById('detail-metric-val-2');
+            const mLabel3 = document.getElementById('detail-metric-label-3');
+            const mVal3 = document.getElementById('detail-metric-val-3');
+
+            if (data[projectId]) {
+                const item = data[projectId];
+                titleEl.textContent = item.title;
+                iconEl.setAttribute('icon', item.icon);
+                subtitleEl.textContent = item.subtitle;
+                problemEl.textContent = item.problem;
+                solutionEl.textContent = item.solution;
+
+                // Clear and load tech tags
+                techEl.innerHTML = '';
+                item.techs.forEach(t => {
+                    const span = document.createElement('span');
+                    span.className = "px-3 py-1 text-[11px] font-medium border border-black/10 dark:border-white/10 rounded-full text-neutral-600 dark:text-neutral-300";
+                    span.textContent = t;
+                    techEl.appendChild(span);
+                });
+
+                // Load metrics
+                mLabel1.textContent = item.metrics[0].label;
+                mVal1.textContent = item.metrics[0].val;
+                mLabel2.textContent = item.metrics[1].label;
+                mVal2.textContent = item.metrics[1].val;
+                mLabel3.textContent = item.metrics[2].label;
+                mVal3.textContent = item.metrics[2].val;
+
+                // Update link
+                linkEl.setAttribute('href', item.link);
+            }
+        }
+
+        // --- Refined Network Animation ---
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        // Configuration
+        const CONFIG = {
+            particleCount: 60,
+            connectionDist: 180,
+            speed: 0.3
+        };
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * CONFIG.speed;
+                this.vy = (Math.random() - 0.5) * CONFIG.speed;
+                this.size = Math.random() * 1.5 + 0.5;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                const isDark = document.documentElement.classList.contains('dark');
+                ctx.fillStyle = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < CONFIG.particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            const isDark = document.documentElement.classList.contains('dark');
+
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+
+                // Connections
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < CONFIG.connectionDist) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = isDark
+                            ? `rgba(255,255,255,${0.15 - dist / CONFIG.connectionDist * 0.15})`
+                            : `rgba(0,0,0,${0.1 - dist / CONFIG.connectionDist * 0.1})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link[data-target="home"]');
+            navLinks.forEach(l => l.classList.add('active'));
+            resize();
+            animate();
+
+            // ── Contact Form AJAX Submission ──
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const nameVal = document.getElementById('form-name').value.trim();
+                    const emailVal = document.getElementById('form-email').value.trim();
+                    const messageVal = document.getElementById('form-message').value.trim();
+
+                    if (!nameVal || !emailVal || !messageVal) {
+                        showToast('Please fill in all fields.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    const btn = document.getElementById('form-submit-btn');
+                    const btnText = document.getElementById('btn-text');
+                    const spinner = document.getElementById('btn-spinner');
+                    btn.disabled = true;
+                    btnText.textContent = 'Sending...';
+                    spinner.classList.remove('hidden');
+
+                    try {
+                        const formData = new FormData();
+                        formData.append('name', nameVal);
+                        formData.append('email', emailVal);
+                        formData.append('message', messageVal);
+                        formData.append('_subject', 'New Message from ' + nameVal + ' — Portfolio');
+                        formData.append('_replyto', emailVal);
+                        formData.append('_captcha', 'false');
+                        formData.append('_template', 'table');
+
+                        const response = await fetch('https://formsubmit.co/ajax/hassanmehboob77222016@gmail.com', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            showToast('Message sent successfully! I\'ll get back to you soon.', 'success');
+                            contactForm.reset();
+                        } else {
+                            showToast('Failed to send message. Please try again.', 'error');
+                        }
+                    } catch (error) {
+                        showToast('Network error. Please check your connection.', 'error');
+                    } finally {
+                        btn.disabled = false;
+                        btnText.textContent = 'Send Now';
+                        spinner.classList.add('hidden');
+                    }
+                });
+            }
+        });
+
+        // ── Toast Notification ──
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = message;
+
+            if (type === 'success') {
+                toast.className = toast.className.replace(/bg-\S+/g, '');
+                toast.classList.add('bg-emerald-500/90');
+                toast.style.color = '#fff';
+                toastIcon.setAttribute('icon', 'lucide:check-circle');
+            } else {
+                toast.className = toast.className.replace(/bg-\S+/g, '');
+                toast.classList.add('bg-red-500/90');
+                toast.style.color = '#fff';
+                toastIcon.setAttribute('icon', 'lucide:alert-circle');
+            }
+
+            // Show
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            // Auto-hide after 4s
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
+        }
+
+    </script>
+</body>
+
+</html>
